@@ -5,11 +5,10 @@
 ## Summary
 
 * [Tools](#tools)
-* [Exploit](#exploit)
-    * [Bruteforce parameters](#bruteforce-parameters)
-    * [Old parameters](#old-parameters)
+* [Methodology](#methodology)
+    * [Bruteforce Parameters](#bruteforce-parameters)
+    * [Old Parameters](#old-parameters)
 * [References](#references)
-
 
 ## Tools
 
@@ -19,33 +18,33 @@
 * [tomnomnom/waybackurls](https://github.com/tomnomnom/waybackurls) - Fetch all the URLs that the Wayback Machine knows about for a domain
 * [devanshbatham/ParamSpider](https://github.com/devanshbatham/ParamSpider) - Mining URLs from dark corners of Web Archives for bug hunting/fuzzing/further probing
 
+## Methodology
 
-## Exploit
+### Bruteforce Parameters
 
-### Bruteforce parameters
+* Use wordlists of common parameters and send them, look for unexpected behavior from the backend.
 
-* Use wordlists of common parameters and send them, look for unexpected behavior from the backend. 
     ```ps1
     x8 -u "https://example.com/" -w <wordlist>
     x8 -u "https://example.com/" -X POST -w <wordlist>
     ```
 
-Wordlist examples: 
-- [Arjun/large.txt](https://github.com/s0md3v/Arjun/blob/master/arjun/db/large.txt)
-- [Arjun/medium.txt](https://github.com/s0md3v/Arjun/blob/master/arjun/db/medium.txt)
-- [Arjun/small.txt](https://github.com/s0md3v/Arjun/blob/master/arjun/db/small.txt)
-- [samlists/sam-cc-parameters-lowercase-all.txt](https://github.com/the-xentropy/samlists/blob/main/sam-cc-parameters-lowercase-all.txt)
-- [samlists/sam-cc-parameters-mixedcase-all.txt](https://github.com/the-xentropy/samlists/blob/main/sam-cc-parameters-mixedcase-all.txt)
+Wordlist examples:
 
-### Old parameters
+* [Arjun/large.txt](https://github.com/s0md3v/Arjun/blob/master/arjun/db/large.txt)
+* [Arjun/medium.txt](https://github.com/s0md3v/Arjun/blob/master/arjun/db/medium.txt)
+* [Arjun/small.txt](https://github.com/s0md3v/Arjun/blob/master/arjun/db/small.txt)
+* [samlists/sam-cc-parameters-lowercase-all.txt](https://github.com/the-xentropy/samlists/blob/main/sam-cc-parameters-lowercase-all.txt)
+* [samlists/sam-cc-parameters-mixedcase-all.txt](https://github.com/the-xentropy/samlists/blob/main/sam-cc-parameters-mixedcase-all.txt)
+
+### Old Parameters
 
 Explore all the URL from your targets to find old parameters.
+
 * Browse the [Wayback Machine](http://web.archive.org/)
 * Look through the JS files to discover unused parameters
 
-
 ## References
 
-* [Hacker tools: Arjun – The parameter discovery tool - 17TH MAY 2021 - Intigriti](https://blog.intigriti.com/2021/05/17/hacker-tools-arjun-the-parameter-discovery-tool/)
-* [Parameter Discovery: A quick guide to start - 20/04/2022 - YesWeHack](https://blog.yeswehack.com/yeswerhackers/parameter-discovery-quick-guide-to-start/)
-
+* [Hacker tools: Arjun – The parameter discovery tool - Intigriti - May 17, 2021](https://blog.intigriti.com/2021/05/17/hacker-tools-arjun-the-parameter-discovery-tool/)
+* [Parameter Discovery: A quick guide to start - YesWeHack - April 20, 2022](http://web.archive.org/web/20220420123306/https://blog.yeswehack.com/yeswerhackers/parameter-discovery-quick-guide-to-start)
